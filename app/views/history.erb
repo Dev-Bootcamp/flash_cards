@@ -1,0 +1,22 @@
+<div class="container">
+  <h1>User. History</h1>
+  
+  <h4>Your Scores</h4>
+
+  <table>
+    <tr>
+      <th>Game</th>
+      <th>Deck</th>
+      <th>Score</th>
+    </tr>
+    <% @user.games.each do |game| %>
+      <tr>
+        <td><%= game.id %></td>
+        <td><%= game.deck.name %></td>
+        <td><%= game.score %></td>
+      </tr>
+    <% end %>
+  </table>
+
+  <p><a href ="/user/:id/">Your page</a></p>
+</div>

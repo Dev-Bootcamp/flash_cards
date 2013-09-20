@@ -1,7 +1,34 @@
 $(document).ready(function() {
-  // This is called after the document has loaded in its entirety
-  // This guarantees that any elements we bind to will exist on the page
-  // when we try to bind to them
 
-  // See: http://docs.jquery.com/Tutorials:Introducing_$(document).ready()
+  $('#history').click(function(event) {
+    event.preventDefault();
+    $.get('/user/' + $('h4').data('name') +'/history', function(form) {
+      $('#history').replaceWith(form);
+    });
+  });
+
 });
+
+// $(document).ready(function() {
+
+//   $('#guess').submit(function(event) {
+//     event.preventDefault();
+//     $.post('/user/' + $('#question').data('userid') + '/round/' + $('#question').data('roundid') + '/deck/' + $('#question').data('deckid') + '/card/' + $('#question').data('newcardid'), function(form) {
+//       $('#question').replaceWith(form);  
+//     }); 
+//   });
+
+// });
+
+
+// $(document).ready(function() {
+//   $('#guess').submit(function(event) {
+//     event.preventDefault();
+//     var url = $(this).attr('action');
+//     var data = $(this).serialize();
+//     $.post(url, data, function(response){
+//       $('#question').replaceWith(response);
+//     });
+//   });
+// });
+

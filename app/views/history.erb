@@ -5,15 +5,15 @@
 
   <table>
     <tr>
-      <th>Game</th>
       <th>Deck</th>
       <th>Score</th>
+      <th>Date/Time</th>
     </tr>
     <% @user.rounds.each do |round| %>
       <tr>
-        <td><%= round.id %></td>
         <td><%= round.deck.name %></td>
-        <td><%= round.score %></td>
+        <td><%= (round.score.to_f / round.deck.cards.length) * 100 %>%</td>
+        <td><%= round.updated_at.strftime("%m/%d/%Y at %I:%M%p") %></td>
       </tr>
     <% end %>
   </table>

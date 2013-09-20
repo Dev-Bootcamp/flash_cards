@@ -1,6 +1,6 @@
 
 get '/user/:id/history' do
-  
+  @user = User.find(params[:id])
   erb :history
 end
 
@@ -10,7 +10,7 @@ get '/user/new' do
 end
 
 get '/user/:id' do
-  
+  @user = User.find(params[:id])
   erb :user
 end
 

@@ -1,5 +1,5 @@
 <div class="container">
-  <h1>Welcome User.</h1>
+  <h1>Welcome, User #<%= @user.id %></h1>
   
   <h4>Pick a Deck...</h4>
   <ul>
@@ -8,5 +8,6 @@
     <li>deck 3</li>
   </ul>
 
-  <p><a href ="/user/:id/history">view my history</a></p>
+  <p><a href ="/user/<%=@user.id%>/history">view my history</a></p>
 </div>
+

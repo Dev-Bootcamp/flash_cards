@@ -1,7 +1,11 @@
 
 get '/user/:id/history' do
   @user = User.find(params[:id])
-  erb :history
+  if request.xhr?
+    erb :_history
+  else
+    erb :history
+  end 
 end
 
 get '/user/new' do

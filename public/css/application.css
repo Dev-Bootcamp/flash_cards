@@ -1,9 +1,62 @@
+body {
+  background-color: #F3F3F3;
+  
+}
+
+.login {
+  background-color: #BAC776;
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+  height: 30px;
+  padding-top: 10px;
+  padding-left: 10px;
+}
+
+.login .button {
+  position: absolute;
+  top: 8px;
+  left: 100px;
+}
+
+.login .register {
+  position: absolute;
+  top: 12px;
+  right: 10px;
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+}
+
+.login input {
+  background-color: #F3F3F3;
+}
+
+.login .email_address {
+  position: absolute;
+  top: 12px;
+  left: 11px;
+  color: white;
+  font-size: 12px;
+  text-decoration: none;
+
+}
+
 .container {
   margin: 20px auto;
   width: 600px;
   padding: 0px 20px 20px 20px;
-  border: 1px dotted black;
+  border: 3px solid #C7C2C2;
+  background-color: #F3F3F3;
+  font-size: 13px;
+
+
 }
+
+.container li {
+  list-style-type: none;
+}
+
 th {
   text-align: left;
 }

@@ -12,7 +12,7 @@
     <% @user.rounds.each do |round| %>
       <tr>
         <td><%= round.deck.name %></td>
-        <td><%= (round.score.to_f / round.deck.cards.length) * 100 %>%</td>
+        <td><%= (round.score.to_f / round.deck.cards.length * 100).to_i %>%</td>
         <td><%= round.updated_at.strftime("%m/%d/%Y at %I:%M%p") %></td>
       </tr>
     <% end %>

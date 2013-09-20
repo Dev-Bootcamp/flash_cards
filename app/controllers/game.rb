@@ -12,7 +12,7 @@ post '/user/:id/round/:roundid/deck/:deckid/card/:cardid' do
   @user = User.find(params[:id])
   @deck = Deck.find(params[:deckid])
   @round = Round.find(params[:roundid])
-   
+  puts @round 
   @card = Card.find(params[:cardid])
   newcardid = @card.id + 1
   if @card.id < @deck.cards.last.id 

@@ -18,8 +18,25 @@
   <title></title>
 </head>
 <body>
+  <div class="login">
+    <% if session[:user_id] %>
+      <a class="email_address" href="/user/<%= current_user.id %>/history"><%= current_user.email %></a>
+      <form action="/logout" method="get">
+        <input class="button" type="submit" value="Logout">
+      </form>
+    <% else %>
+      <form action="/login" method="POST">
+        <label for="email">email</label>
+        <input type="text" name="user[email]" id="email">
+        <label for="password">password</label>
+        <input type="password" name="user[password]" id="password">
+        <input type="submit" value="login">
+      </form>
+    <% end %>
+    <a class="register" href ="/user/new">create new user</a>
+  </div>
   <div class="container">
-  <%= yield %>
+    <%= yield %>
   </div>
 </body>
 </html>

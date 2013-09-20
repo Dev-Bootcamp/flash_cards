@@ -19,12 +19,18 @@ post '/user/:id/round/:roundid/deck/:deckid/card/:cardid' do
     @newcard = Card.find(newcardid)
     @guess  = Guess.create(card_id: params[:cardid], round_id: params[:roundid], guess: params[:answer])
     if @guess.guess == @card.answer 
-      @round.score += 1 
+      newscore = @round.score += 1
+      @round.update_attributes(score: newscore) 
       erb :game
     else 
       erb :game
     end 
   else 
+    @guess  = Guess.create(card_id: params[:cardid], round_id: params[:roundid], guess:params[:answer])
+    if @guess.guess == @card.answer 
+      newscore = @round.score += 1
+      @round.update_attributes(score: newscore)
+    end 
     erb :summary
   end 
 end

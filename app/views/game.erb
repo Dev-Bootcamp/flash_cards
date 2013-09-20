@@ -1,12 +1,13 @@
-
+<div data-userid="<%= @user.id %>" data-roundid="<%= @round.id %>" data-deckid="<%= @deck.id %>" data-newcardid="<%= @newcard.id %>" id="question">
 
 <%= @result %> <br>
 
 Question: <%= @newcard.question %> <br>
 Answer:
-<form action='/user/<%=@user.id%>/round/<%=@round.id%>/deck/<%=@deck.id%>/card/<%=@newcard.id%>' method="POST">
+<form id="guess" action="/user/<%=@user.id%>/round/<%=@round.id%>/deck/<%=@deck.id%>/card/<%=@newcard.id%>" method="POST">
   <input type="text" name="answer"> 
   <input type="submit" value="Submit">
  
 </form>
   
+</div>

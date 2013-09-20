@@ -2,7 +2,7 @@
 get '/user/:id/history' do
   @user = User.find(params[:id])
   if request.xhr?
-    erb :_history
+    erb :_history, layout: false
   else
     erb :history
   end 

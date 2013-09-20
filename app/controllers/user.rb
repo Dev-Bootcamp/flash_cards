@@ -35,6 +35,7 @@ post '/login' do
 end
 
 post '/user/:id' do
+  puts "hi"
   @user = User.create(params[:user])
   redirect to ("/user/#{@user.id}")
 end

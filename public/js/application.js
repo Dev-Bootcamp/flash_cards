@@ -11,11 +11,24 @@ $(document).ready(function() {
 
 // $(document).ready(function() {
 
-//   $('#guess').on('submit', function(event) {
+//   $('#guess').submit(function(event) {
 //     event.preventDefault();
-//     $.post('/user/' + $('#question').data('userid') + '/round/' + $('#question').data('roundid') + '/deck/' + $('#question').data('deckid') + '/card/' + $('#question').data('newcardid')), function(form) {
+//     $.post('/user/' + $('#question').data('userid') + '/round/' + $('#question').data('roundid') + '/deck/' + $('#question').data('deckid') + '/card/' + $('#question').data('newcardid'), function(form) {
 //       $('#question').replaceWith(form);  
 //     }); 
 //   });
 
 // });
+
+
+// $(document).ready(function() {
+//   $('#guess').submit(function(event) {
+//     event.preventDefault();
+//     var url = $(this).attr('action');
+//     var data = $(this).serialize();
+//     $.post(url, data, function(response){
+//       $('#question').replaceWith(response);
+//     });
+//   });
+// });
+

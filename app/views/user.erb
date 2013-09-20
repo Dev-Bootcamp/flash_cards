@@ -1,4 +1,4 @@
-<div class="container">
+
   <h1>Welcome, <%= (@user.email.gsub(/(@.+)/,'')).capitalize %></h1>
   
   <h4>Pick a Deck...</h4>
@@ -10,5 +10,5 @@
 
   <p><a href ="/user/<%=@user.id%>/history">view my history</a></p>
   <p><a href="/logout">Logout</a></p>
-</div>
+
 

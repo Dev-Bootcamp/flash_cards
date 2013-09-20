@@ -1,13 +1,14 @@
 <div class="container">
-  <h1>Welcome, User #<%= @user.id %></h1>
+  <h1>Welcome, <%= (@user.email.gsub(/(@.+)/,'')).capitalize %></h1>
   
   <h4>Pick a Deck...</h4>
   <ul>
-    <li>deck 1</li>
-    <li>deck 2</li>
-    <li>deck 3</li>
+    <% @decks.each do |deck|%>
+      <li><a href=""><%= deck.name %></a></li>
+    <% end %>
   </ul>
 
   <p><a href ="/user/<%=@user.id%>/history">view my history</a></p>
+  <p><a href="/logout">Logout</a></p>
 </div>
 

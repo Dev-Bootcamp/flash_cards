@@ -14,6 +14,7 @@ end
 
 get '/user/:id' do
   @user = User.find(params[:id])
+  @decks = Deck.all
   erb :user
 end
 
@@ -34,6 +35,7 @@ post '/login' do
 end
 
 post '/user/:id' do
+  puts "hi"
   @user = User.create(params[:user])
   redirect to ("/user/#{@user.id}")
 end

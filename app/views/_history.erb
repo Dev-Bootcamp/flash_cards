@@ -1,18 +1,16 @@
-<h1><%= (@user.email.gsub(/(@.+)/,'')).capitalize %>'s History</h1>
-  
-  <h4>Your Scores</h4>
 
-  <table>
+<table>
+  <caption>Your Scores</caption>
+  <tr>
+    <th>Deck</th>
+    <th>Score</th>
+    <th>Date/Time</th>
+  </tr>
+  <% @user.rounds.each do |round| %>
     <tr>
-      <th>Deck</th>
-      <th>Score</th>
-      <th>Date/Time</th>
+      <td><%= round.deck.name %></td>
+      <td><%= (round.score.to_f / round.deck.cards.length * 100).to_i %>%</td>
+      <td><%= round.updated_at.strftime("%m/%d/%Y at %I:%M%p") %></td>
     </tr>
-    <% @user.rounds.each do |round| %>
-      <tr>
-        <td><%= round.deck.name %></td>
-        <td><%= (round.score.to_f / round.deck.cards.length * 100).to_i %>%</td>
-        <td><%= round.updated_at.strftime("%m/%d/%Y at %I:%M%p") %></td>
-      </tr>
-    <% end %>
-  </table>
+  <% end %>
+</table>

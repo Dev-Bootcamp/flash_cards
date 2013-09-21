@@ -1,5 +1,6 @@
 body {
   background-color: #F3F3F3;
+  color: #5F5F5F;
   
 }
 
@@ -57,6 +58,30 @@ body {
   list-style-type: none;
 }
 
+.center {
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin-top: auto;
+}
+
+caption {
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
 th {
+  border-top: 1px solid #BAC776;
+  border-bottom: 1px solid #BAC776;
+  padding: 0 5em 0 0.5em;
+  background-color: #ffc;
   text-align: left;
+}
+
+td {
+  border-bottom: 1px solid #F1F1D7;
+  padding: 0 5em 0 0.5em;
 }

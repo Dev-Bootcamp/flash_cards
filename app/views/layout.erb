@@ -27,13 +27,13 @@
     <% else %>
       <form action="/login" method="POST">
         <label for="email">email</label>
-        <input type="text" name="user[email]" id="email">
+        <input type="email" required="required" name="user[email]" id="email">
         <label for="password">password</label>
-        <input type="password" name="user[password]" id="password">
+        <input type="password" required="required" name="user[password]" id="password">
         <input type="submit" value="login">
       </form>
+      <a class="register" href ="/user/new">create new user</a>
     <% end %>
-    <a class="register" href ="/user/new">create new user</a>
   </div>
   <div class="container">
     <%= yield %>

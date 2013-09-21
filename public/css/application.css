@@ -17,7 +17,7 @@ body {
 .login .button {
   position: absolute;
   top: 8px;
-  left: 100px;
+  right: 10px;
 }
 
 .login .register {
@@ -82,6 +82,6 @@ th {
 }
 
 td {
-  border-bottom: 1px solid #F1F1D7;
+  border-bottom: 1px solid #ccccb6;
   padding: 0 5em 0 0.5em;
 }

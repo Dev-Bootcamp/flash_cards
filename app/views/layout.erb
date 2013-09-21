@@ -27,10 +27,10 @@
     <% else %>
       <form action="/login" method="POST">
         <label for="email">email</label>
-        <input type="email" required="required" name="user[email]" id="email">
+        <input type="email" required="required" name="user[email]" id="email" tabindex="11">
         <label for="password">password</label>
-        <input type="password" required="required" name="user[password]" id="password">
-        <input type="submit" value="login">
+        <input type="password" required="required" name="user[password]" id="password" tabindex="12">
+        <input type="submit" value="login" tabindex="13">
       </form>
       <a class="register" href ="/user/new">create new user</a>
     <% end %>

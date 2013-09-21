@@ -31,8 +31,9 @@ end
 # ============================
 
 post '/login' do
-  @user = User.find_by(email: params[:user][:email])
-  if @user && @user.password == params[:user][:password]
+  @user = User.authenticate(params[:email],
+                            params[:password]) #moved authentication to user model
+  if @user
     session[:user_id] = @user.id
     redirect to ("/user/#{@user.id}")
   else
@@ -41,7 +42,12 @@ post '/login' do
 end
 
 post '/user/:id' do
-  @user = User.create(params[:user])
-  session[:user_id] = @user.id
-  redirect to ("/user/#{@user.id}")
+  begin
+    @user = User.create(params[:user])
+    session[:user_id] = @user.id
+    redirect to ("/user/#{@user.id}")
+  rescue
+    @error = "Error! failed to create user. Please try again."
+    erb :new_user
+  end
 end

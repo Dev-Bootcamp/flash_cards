@@ -28,7 +28,7 @@ get '/logout' do
   redirect to ('/')
 end
 
-# ============================
+# ===POST=========================
 
 post '/login' do
   @user = User.authenticate(params[:email],

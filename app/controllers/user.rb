@@ -1,4 +1,3 @@
-
 get '/user/:id/history' do
   @user = User.find(params[:id])
   if request.xhr?
@@ -9,6 +8,11 @@ get '/user/:id/history' do
 end
 
 get '/user/new' do
+  erb :new_user
+end
+
+get '/user/new/error' do
+  @error = "Invalid email or password.  Please try again."
   erb :new_user
 end
 
@@ -42,12 +46,11 @@ post '/login' do
 end
 
 post '/user/:id' do
-  begin
-    @user = User.create(params[:user])
+  @user = User.create(params[:user])
+  if @user.valid?
     session[:user_id] = @user.id
     redirect to ("/user/#{@user.id}")
-  rescue
-    @error = "Error! failed to create user. Please try again."
-    erb :new_user
+  else
+    redirect to ('/user/new/error')
   end
 end

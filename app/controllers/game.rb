@@ -1,9 +1,13 @@
-get '/user/:id/deck/:deckid' do 
-  @user =    User.find(params[:id])
-  @deck =    Deck.find(params[:deckid])
-  @newcard = Deck.find(params[:deckid]).cards.first
-  @round =   Round.create(user_id: params[:id], deck_id: params[:deckid])
-  erb :game
+get '/user/:id/deck/:deckid' do
+  if request.xhr?
+    erb :_game, layout: false
+  else
+    @user =    User.find(params[:id])
+    @deck =    Deck.find(params[:deckid])
+    @newcard = Deck.find(params[:deckid]).cards.first
+    @round =   Round.create(user_id: params[:id], deck_id: params[:deckid])
+    erb :game
+  end
 end 
 
 #=======POST===================
@@ -25,5 +29,5 @@ post '/user/:id/round/:roundid/deck/:deckid/card/:cardid' do
     @percentage_score = Guess.percentage(@round, @deck)
     @comment = Guess.comment(@percentage_score)
     erb :summary
-  end 
+  end
 end

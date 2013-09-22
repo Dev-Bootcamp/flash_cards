@@ -3,7 +3,11 @@ get '/user/:id/deck/:deckid' do
   @deck =    Deck.find(params[:deckid])
   @newcard = Deck.find(params[:deckid]).cards.first
   @round =   Round.create(user_id: params[:id], deck_id: params[:deckid])
-  erb :game
+  if request.xhr?
+    erb :game, layout: false
+  else
+    erb :game
+  end
 end 
 
 #=======POST===================

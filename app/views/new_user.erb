@@ -1,6 +1,10 @@
 
   <h2>Create New User</h2>
   
+  <% if @error %>
+    <p><%= @error %></p>
+  <% end %>
+  
   <form action="/user/:id" method="POST">
     <label>Email:<input type="text" name="user[email]" id="email" tabindex="1"></label>
     <label>Password:<input type="password" name="user[password]" id="password" tabindex="2"></label>

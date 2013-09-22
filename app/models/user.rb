@@ -4,7 +4,7 @@ class User < ActiveRecord::Base
   has_many :guesses, through: :rounds
 
   validates :email, :password_digest, presence: true
-  validates :email, uniqueness: true
+  validates :email, uniqueness: true, format: { with: /.+@.+\..{2,}/ }
 
   include BCrypt
 

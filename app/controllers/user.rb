@@ -23,7 +23,11 @@ end
 get '/user/:id' do
   @user = User.find(params[:id])
   @decks = Deck.all
-  erb :user
+  if request.xhr?
+    erb :user, layout: false
+  else
+    erb :user
+  end
 end
 
 get '/logout' do

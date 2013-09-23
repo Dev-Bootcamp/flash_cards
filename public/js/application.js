@@ -5,7 +5,18 @@ $(document).ready(function() {
       $('#history').replaceWith(form);
     });
   });
+  $('#other').click(function(event) {
+    console.log('clicked');
+    event.preventDefault();
+  });
 });
+
+// $(document).ready(function() {
+//   $('#hide').click(function(event) {
+//     console.log('clicked');
+//     event.preventDefault();
+//   });
+// });
 
 $(document).ready(function() {
   $('#guess').submit(function(event) {
@@ -18,3 +29,13 @@ $(document).ready(function() {
   });
 });
 
+// $(document).ready(function() {
+//   $('hide').click(function(event) {
+//     event.preventDefault();
+//     console.log('click');
+//     $.get('/user/' + $('h4').data('name'), function(response) {
+//       $('#history').replaceWith(response)
+//     });
+//     $('#hide').hide;
+//   });
+// });
